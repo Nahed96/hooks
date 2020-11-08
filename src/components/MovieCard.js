@@ -1,14 +1,16 @@
 import React from 'react'
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
+import { Link } from 'react-router-dom';
 import Rate from './Rate.js'
 
 const MovieCard=({movie})=> (
-    
+  
 <div className="container">
 
 // ... component class
 return {
-	// .. return
+  // .. return
+  
   <Flippy
     flipOnHover={false} // default false
     flipOnClick={true} // default false
@@ -23,13 +25,14 @@ return {
         backgroundColor: '#41669d',
       }}
     >
-      
+     <Link to='/movies'> 
     <h1>{movie.name}</h1>
     <img style={{
       width:'80px',
       height:'100px',
       padding:'10px 10px 10px 10px'
     }} src={movie.image}/>
+    </Link>
     <p>{movie.date}</p>
 
     </FrontSide>
@@ -39,14 +42,15 @@ return {
   <div><Rate rate={movie.rate}/></div>
     </BackSide>
   </Flippy>
+
 }
-   
+  
   
 </div>
            
-            
+      
        
     )
+    
 
-
-export default MovieCard 
+export default MovieCard ;
